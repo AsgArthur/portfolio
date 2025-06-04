@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arthur Cren - Accueil</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="brand">
+        <img src="28.jpg" alt="Logo" class="logo"/>
+        <span>Arthur Cren</span>
+      </div>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="apropos.html">À propos</a>
+        <a href="projets.html">Projets</a>
+        <button id="toggle-theme" class="toggle-theme-btn">🌙 Mode sombre</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>Bienvenue sur mon portfolio</h2>
+      <img src="28.jpg" alt="Portrait d'Arthur Cren" class="portrait">
+      <div class="banner">Je recherche activement une alternance en développement logiciel pour 2025 !</div>
+      <p>Je m'appelle <strong>Arthur Cren</strong>, étudiant en BUT Informatique à l'IUT de Lannion. Passionné par le développement web, les bases de données et l'algorithmique, je cherche à approfondir mes compétences à travers des projets variés et des expériences professionnelles.</p>
+      <p>Curieux, rigoureux et motivé, je suis actuellement à la recherche d'une alternance en développement logiciel pour l'année 2025. N'hésitez pas à parcourir mon portfolio pour découvrir mes projets et compétences !</p>
+      <a href="cv.pdf" target="_blank" class="cv-button">📄 Voir mon CV</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>Email : <a href="mailto:crenarthur@gmail.com">crenarthur@gmail.com</a></p>
+    <p>Téléphone : 07 69 48 16 99</p>
+    <p>LinkedIn : <a href="https://www.linkedin.com/in/arthur-cren-b50714356/" target="_blank">arthur-cren</a></p>
+    <p>© 2025 Mon Portfolio — Tous droits réservés.</p>
+  </footer>
+  <script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const toggleBtn = document.getElementById('toggle-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (localStorage.getItem('theme') === 'dark' || (prefersDark && !localStorage.getItem('theme'))) {
+      document.documentElement.classList.add('dark');
+      toggleBtn.textContent = '☀️ Mode clair';
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      document.documentElement.classList.toggle('dark');
+      const isDark = document.documentElement.classList.contains('dark');
+      toggleBtn.textContent = isDark ? '☀️ Mode clair' : '🌙 Mode sombre';
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    });
+  });
+</script>
+</body>
+
+</html>
