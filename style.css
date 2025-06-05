@@ -223,15 +223,22 @@ footer {
   margin-bottom: 0.5rem;
   transition: all 0.3s ease;
 }
+.technos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
 .technos img {
-  width: 44px;
-  height: 44px;
-  margin: 6px;
-  vertical-align: middle;
-  transition: transform 0.3s ease;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  transition: transform 0.2s;
 }
 .technos img:hover {
-  transform: scale(1.15);
+  transform: scale(1.15) rotate(-6deg);
 }
 
 .competences {
@@ -565,6 +572,12 @@ body {
   background: #f7fafc;
   color: #222;
   transition: background 0.3s, color 0.3s;
+}
+
+.cv-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
 }
 
 
