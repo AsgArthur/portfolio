@@ -1,22 +1,6 @@
-.toggle-theme-btn {
-  margin-left: 1rem;
-  padding: 0.5rem 1rem;
-  border: 2px solid #3b82f6;
-  background-color: #e0e7ff;
-  color: #1e3a8a;
-  border-radius: 9999px;
-  cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s, color 0.3s, border 0.3s;
-  box-shadow: 0 2px 8px rgba(59,130,246,0.08);
-}
-.toggle-theme-btn:hover {
-  background-color: #3b82f6;
-  color: #fff;
-  border-color: #1e3a8a;
-}
-
-
+/* =========================
+   Variables & Mode Sombre
+   ========================= */
 
 /* Mode clair par défaut */
 :root {
@@ -46,7 +30,10 @@
   }
 }
 
-/* Reset & base */
+/* =========================
+   Reset & Base
+   ========================= */
+
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -55,6 +42,7 @@ body {
   line-height: 1.6;
   transition: background 0.5s ease;
 }
+
 a {
   color: #2563eb;
   text-decoration: none;
@@ -65,7 +53,10 @@ a:hover {
   color: #1d4ed8;
 }
 
-/* Header */
+/* =========================
+   Header & Navbar
+   ========================= */
+
 header {
   backdrop-filter: blur(10px);
   background-color: rgba(255, 255, 255, 0.7);
@@ -75,6 +66,7 @@ header {
   top: 0;
   z-index: 1000;
 }
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -82,6 +74,7 @@ header {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .brand {
   display: flex;
   align-items: center;
@@ -91,6 +84,7 @@ header {
   color: #1e3a8a;
   text-shadow: 1px 1px #93c5fd;
 }
+
 .logo {
   width: 44px;
   height: 44px;
@@ -98,6 +92,7 @@ header {
   border: 2px solid #3b82f6;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
+
 nav a {
   margin: 0 0.5rem;
   padding: 0.5rem 1rem;
@@ -128,7 +123,32 @@ nav a.active::after {
   box-shadow: 0 0 4px rgba(30,58,138,0.5);
 }
 
-/* Section */
+/* =========================
+   Toggle Theme Button
+   ========================= */
+
+.toggle-theme-btn {
+  margin-left: 1rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #3b82f6;
+  background-color: #e0e7ff;
+  color: #1e3a8a;
+  border-radius: 9999px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+  box-shadow: 0 2px 8px rgba(59,130,246,0.08);
+}
+.toggle-theme-btn:hover {
+  background-color: #3b82f6;
+  color: #fff;
+  border-color: #1e3a8a;
+}
+
+/* =========================
+   Section & Titles
+   ========================= */
+
 .section {
   max-width: 900px;
   margin: 2rem auto;
@@ -144,7 +164,10 @@ nav a.active::after {
   animation: slideUp 1s ease forwards;
 }
 
-/* Portrait / Banner */
+/* =========================
+   Portrait & Banner
+   ========================= */
+
 .portrait {
   width: 160px;
   height: 160px;
@@ -157,6 +180,7 @@ nav a.active::after {
   background-color: #bfdbfe;
   animation: fadeZoom 1.2s ease forwards;
 }
+
 .banner {
   background: #3b82f6;
   color: white;
@@ -170,7 +194,10 @@ nav a.active::after {
   border: 2px solid #1e3a8a;
 }
 
-/* CV Button */
+/* =========================
+   CV Button
+   ========================= */
+
 .cv-button {
   display: inline-block;
   background: #3b82f6;
@@ -188,7 +215,16 @@ nav a.active::after {
   box-shadow: 0 4px 20px rgba(59,130,246,0.3);
 }
 
-/* Footer */
+.cv-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
 footer {
   background: linear-gradient(to right, #e0f2fe, #fff, #dbeafe);
   text-align: center;
@@ -198,7 +234,10 @@ footer {
   border-top: 2px solid #3b82f6;
 }
 
-/* Projets */
+/* =========================
+   Projets
+   ========================= */
+
 .project {
   background: white;
   border: 1px solid #d1d5db;
@@ -217,12 +256,30 @@ footer {
   color: #111827;
 }
 
-/* Compétences, timeline, technos */
+/* Projects Grid */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+@media (max-width: 700px) {
+  .projects {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* =========================
+   Compétences, Timeline, Technos
+   ========================= */
+
 .competences li,
 .timeline li {
   margin-bottom: 0.5rem;
   transition: all 0.3s ease;
 }
+
 .technos {
   display: flex;
   justify-content: center;
@@ -267,7 +324,10 @@ footer {
   font-weight: 700;
 }
 
-/* Timeline */
+/* =========================
+   Timeline
+   ========================= */
+
 .timeline {
   position: relative;
   margin: 2.5rem 0 2.5rem 2.5rem;
@@ -276,14 +336,12 @@ footer {
   list-style: none;
   max-width: 700px;
 }
-
 .timeline li {
   position: relative;
   margin-bottom: 2.5rem;
   min-height: 64px;
   transition: transform 0.2s, box-shadow 0.2s;
 }
-
 .timeline-dot {
   position: absolute;
   left: -2.1rem;
@@ -298,7 +356,6 @@ footer {
   transition: border 0.3s, box-shadow 0.3s, background 0.3s;
   animation: pulse 1.5s infinite;
 }
-
 .timeline-content {
   background: #f9fafb;
   border-radius: 1rem;
@@ -309,7 +366,6 @@ footer {
   border-left: 4px solid #3b82f6;
   position: relative;
 }
-
 .timeline-date {
   display: block;
   font-size: 1.1rem;
@@ -318,18 +374,15 @@ footer {
   margin-bottom: 0.2rem;
   letter-spacing: 1px;
 }
-
 .timeline-event {
   font-size: 1.05rem;
   color: #1e3a8a;
 }
-
 .timeline li:hover .timeline-content {
   background: #e0e7ff;
   box-shadow: 0 4px 24px 0 rgba(59,130,246,0.18);
   border-left: 4px solid #2563eb;
 }
-
 .timeline li:hover .timeline-dot {
   border-color: #2563eb;
   background: #e0e7ff;
@@ -350,7 +403,10 @@ footer {
   }
 }
 
-/* Mode sombre : reprend toutes les fonctionnalités du mode clair, seules les couleurs changent */
+/* =========================
+   Mode Sombre (Dark Mode)
+   ========================= */
+
 .dark body {
   background: linear-gradient(to bottom right, #18181b, #23232b 60%, #18181b 100%);
   color: #f3f3f3;
@@ -535,22 +591,10 @@ footer {
   }
 }
 
-/* Projects Grid */
-.projects {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 1.5rem;
-  margin-top: 1.5rem;
-}
+/* =========================
+   Animations
+   ========================= */
 
-@media (max-width: 700px) {
-  .projects {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-}
-
-/* Animations */
 @keyframes fadeIn {
   to { opacity: 1; }
 }
@@ -567,17 +611,14 @@ footer {
   50% { box-shadow: 0 0 0 10px rgba(59,130,246, 0); }
 }
 
-/* style.css */
+/* =========================
+   Extra Body
+   ========================= */
+
 body {
   background: #f7fafc;
   color: #222;
   transition: background 0.3s, color 0.3s;
-}
-
-.cv-btn-container {
-  display: flex;
-  justify-content: center;
-  margin-top: 1.5rem;
 }
 
 
